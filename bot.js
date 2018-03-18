@@ -44,5 +44,12 @@ client.on('message', message => {
 	}
 });
 
+client.on('message', message => {
+	if (message.content === ':test')
+	{
+		message.channel.send('Tested');
+	}
+});
+
 // Log our bot in
 client.login(token);
