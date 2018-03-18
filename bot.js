@@ -30,7 +30,7 @@ client.on('message', message => {
 		var number2 = words[2]
 		console.log('your number is', number1)
 		   //client.sendMessage('you ran the :purchase command')
-		message.guild.channels.find("name", "purchaserequests").send("DiscordId: "+ id + "     " + "Username: " + tag + " " + number1);
+		message.guild.channels.find("name", "purchaserequests").send("DiscordId: "+ id + "     " + "Username: " + tag + "Steam Code " + number1);
 		//message.author.sendMessage("Thank you for sending a purchase request for Cyber\nYou will be messaged shortly by an owner to do the transaction.")
 
 
