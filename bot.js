@@ -28,9 +28,11 @@ client.on('message', message => {
 		id = message.author.id
 		tag = message.author.tag
 		var number2 = words[2]
+		owner="Pudding Mug#6560"
 		console.log('your number is', number1)
 		   //client.sendMessage('you ran the :purchase command')
 		message.guild.channels.find("name", "purchaserequests").send("DiscordId: "+ id + " " + "Username: " + tag + " Steam Code " + number1);
+		client.send_message(owner, "Test")
 		//message.author.sendMessage("Thank you for sending a purchase request for Cyber\nYou will be messaged shortly by an owner to do the transaction.")
 
 
@@ -40,7 +42,7 @@ client.on('message', message => {
 client.on('message', message => {
 	if (message.content === ':help')
 	{
-		message.channel.send('To purchase Cyber, all you have to do is run a command! Type :buy [Amazon/Steam Code]. Then, your name will be added to a purchase list. The owner of Cyber will then confirm your request and add you for the exploit.');
+		message.channel.send('To purchase Cyber, all you have to do is run a command! Type :buy [Amazon Code]. Then, your name will be added to a purchase list. The owner of Cyber will then confirm your request and add you for the exploit.');
 	}
 });
 
