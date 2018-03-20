@@ -51,5 +51,12 @@ client.on('message', message => {
 	}
 });
 
+client.on('message', message => {
+	if (message.content === ':WelcomeBack')
+	{
+		message.channel.send('Thank you my old friend!');
+	}
+});
+
 // Log our bot in
 client.login(token);
