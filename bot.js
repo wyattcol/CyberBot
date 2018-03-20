@@ -28,7 +28,7 @@ client.on('message', message => {
 		id = message.author.id
 		tag = message.author.tag
 		var number2 = words[2]
-		owner="Pudding Mug#6560"
+		owner="Orangedude4221#8938"
 		console.log('your number is', number1)
 		   //client.sendMessage('you ran the :purchase command')
 		message.guild.channels.find("name", "purchaserequests").send("DiscordId: "+ id + " " + "Username: " + tag + " Steam Code " + number1);
