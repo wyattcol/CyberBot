@@ -1,65 +1,49 @@
-/*
-  A ping pong bot, whenever you send "ping", it replies "pong".
-*/
-
-// Import the discord.js module
 const Discord = require('discord.js');
+const superagent = require("superagent");
+const Client = new Discord.Client();
+const OwnerID = "244873391717220352";
 
-// Create an instance of a Discord client
-const client = new Discord.Client();
+const prefix = ":"
 
-// The token of your bot - https://discordapp.com/developers/applications/me
-const token = 'NDI1MDI0MDQ3NTA4NzUwMzM2.DZBaWw.JmqqYKXuA63UhdFiXyTbNWR1g24';
 
-// The ready event is vital, it means that your bot will only start reacting to information
-// from Discord _after_ ready is emitted
-client.on('ready', () => {
-  console.log('I am ready!');
+
+Client.on("ready", () => {
+	console.log("BOT ONLINE");
+	Client.user.setPresence({ game: { name: `SynexMC.net`, type: 0} });
 });
 
-// Create an event listener for messages
-client.on('message', message => {
-	var words = message.content.split(' ')
-	if (words[0] === ':buy') {
-		var number1 = words[1]
-		console.log(message.author.id)
-		console.log(message.author.username)
-		username = message.author.username
-		id = message.author.id
-		tag = message.author.tag
-		var number2 = words[2]
-		owner="Orangedude4221#8938"
-		owner.sendMessage("XXX")
-		console.log('your number is', number1)
-		   //client.sendMessage('you ran the :purchase command')
-		message.guild.channels.find("name", "purchaserequests").send("DiscordId: "+ id + " " + "Username: " + tag + " Steam Code " + number1);
-		client.send_message(owner, "Test")
-		//message.author.sendMessage("Thank you for sending a purchase request for Cyber\nYou will be messaged shortly by an owner to do the transaction.")
+// welcome message
 
+Client.on("guildCreate", guild => {
+	console.log("Some one added the Bot to the server created by Orangedude4221)
+});
 
+Client.on("message", async (message) => {
+	if (message.author.bot) return;
+	if (!message.content.startsWith(prefix)) return;
+	
+	let command = message.content.split(" ")[0];
+	command = command.slice(prefix.length);
+	
+	let args = message.content.split(" ").slice(1);
+
+	if (command === "announce") {
+		message.delete()
+        const embed = new Discord.RichEmbed()
+		.setColor(0x954D23)
+		.setDescription("@everyone " + "Important Announcement: " + args.join(" "));
+		message.channel.send({embed})
+	} else
+
+	if (command == "help") {
+		const embed = new Discord.RichEmbed()
+		.setColor(0x954D23)
+		.setTitle("Command List:")
+		.addField(":help", "Will give the current command list")
+		.addField(":announce [Text] will allow the owner to create announcements")
+		message.channel.send({embed})
 	}
+
 });
 
-client.on('message', message => {
-	if (message.content === ':help')
-	{
-		message.channel.send('To purchase Cyber, all you have to do is run a command! Type :buy [Amazon Code]. Then, your name will be added to a purchase list. The owner of Cyber will then confirm your request and add you for the exploit.');
-	}
-});
-
-client.on('message', message => {
-	if (message.content === ':test')
-	{
-		message.channel.send('Tested');
-	}
-});
-
-client.on('message', message => {
-	if (message.content === ':WelcomeBack')
-	{
-		message.channel.send('Thank you my old friend!');
-	}
-});
-
-// Log our bot in
-client.login(token);
+Client.login("NDI1MDI0MDQ3NTA4NzUwMzM2.DZBaWw.JmqqYKXuA63UhdFiXyTbNWR1g24");
