@@ -484,4 +484,4 @@ else if (!HWIND){
 
 
 
-client.login(process.env.TOKEN);
+client.login('NDI1MDI0MDQ3NTA4NzUwMzM2.DZUuGw.wqo8YjhzxtgIZRgnAa6XeCkumvU');
