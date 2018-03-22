@@ -12,7 +12,7 @@ pastebin = new PastebinAPI('3a3f03696725a46033929f7ca868f1f4');
 // Post update
 
 client.on("ready", () => {
-    client.channels.get("424208779849236483").send({embed: {
+    client.channels.get("426280493978484746").send({embed: {
         color: 3066993,
         author: {
           name: client.user.username,
@@ -484,4 +484,4 @@ else if (!HWIND){
 
 
 
-client.login(process.env.TOKEN);
+client.login('NDI1MDI0MDQ3NTA4NzUwMzM2.DZUvXQ.W7rbpnCZ2c_wdkXzbLnMQcdZZc0');
