@@ -1,4 +1,4 @@
-// Don't touch anything without asking GeneratedScript#3909 first. \\
+// Don't touch anything without asking Orangedude4221 first. \\
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
